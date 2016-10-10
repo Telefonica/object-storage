@@ -1,0 +1,13 @@
+coverage/
+node_modules/
+npm-debug.*
+lib/
+typings/
+.idea/
+*.orig
+src/*.js
+/image.png
+
+.npmrc
+
+.DS_Store
