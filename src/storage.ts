@@ -25,7 +25,7 @@ export class ObjectStorage {
         this.s3 = new AWS.S3(s3Config);
     }
 
-    upload(mystream: stream.Readable): Promise<string> {
+    upload(mystream: NodeJS.ReadableStream): Promise<string> {
         let params = {
             Key: uuid.v4(), // usa a unguessable key
             Body: mystream
