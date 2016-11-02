@@ -25,9 +25,17 @@ export class ObjectStorage {
         this.s3 = new AWS.S3(s3Config);
     }
 
-    upload(mystream: NodeJS.ReadableStream): Promise<string> {
+    /**
+     * Upload a file to the object storage.
+     * @param {NodeJS.ReadableStream} mystream - The readable string to be uploaded.
+     * @param {string} [name] - The resource name.
+     * @return {Promise<string} A promise of the resource URL.
+     */
+    upload(mystream: NodeJS.ReadableStream, name?: string): Promise<string> {
+        let key = name || uuid.v4();
+
         let params = {
-            Key: uuid.v4(), // usa a unguessable key
+            Key: key, // use a unguessable key
             Body: mystream
         };
 
@@ -35,12 +43,12 @@ export class ObjectStorage {
             let request = this.s3.upload(params);
             request.send((err: Error, data: any) => {
                 if (err) {
-                    logger.error(err, 'Error uploading object');
+                    logger.error(err, 'Error uploading object', params.Key);
                     return reject(err);
                 }
                 logger.info('Object uploaded', params.Key);
 
-                // signed url for the user
+                // generate a signed url that expires for the user
                 let urlParams = {
                     Key: params.Key,
                     Expires: 120
