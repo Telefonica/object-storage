@@ -2,16 +2,12 @@
   "name": "@telefonica/object-storage",
   "version": "2.1.0",
   "description": "Object storage publishes objects in a safe and accessible place",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "repository": "https://github.com/Telefonica/yot-bot",
-  "author": "TDAF",
+  "author": "TDAF <tdaf@tid.es>",
   "keywords": [
     "s3",
     "storage"
-  ],
-  "files": [
-    "lib",
-    "bin"
   ],
   "main": "lib/index.js",
   "scripts": {

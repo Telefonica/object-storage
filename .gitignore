@@ -11,3 +11,5 @@ src/*.js
 .npmrc
 
 .DS_Store
+
+.vscode

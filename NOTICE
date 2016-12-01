@@ -1,17 +1,4 @@
-# object-storage
-
-This is a tool to upload and keep objects in a safe place.
-
-## Usage examples
-
-```javascript
-let storage = new ObjectStorage();
-storage.upload(stream).then(url => console.log('Resource available', url));
-```
-
-## LICENSE
-
-Copyright 2016 [Telefónica I+D](http://www.tid.es)
+Copyright 2016 Telefónica I+D
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
