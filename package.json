@@ -1,9 +1,9 @@
 {
   "name": "@telefonica/object-storage",
-  "version": "2.1.0",
-  "description": "Object storage publishes objects in a safe and accessible place",
+  "version": "2.2.0",
+  "description": "Upload and keep objects in a S3 storage",
   "license": "Apache-2.0",
-  "repository": "https://github.com/Telefonica/yot-bot",
+  "repository": "https://github.com/Telefonica/object-storage",
   "author": "TDAF <tdaf@tid.es>",
   "keywords": [
     "s3",

@@ -52,7 +52,7 @@ export class ObjectStorage {
         let key = name || uuid.v4();
 
         let params = {
-            Key: key, // use a unguessable key
+            Key: key,
             Body: mystream
         };
 
@@ -68,7 +68,7 @@ export class ObjectStorage {
                 // generate a signed url that expires for the user
                 let urlParams = {
                     Key: params.Key,
-                    Expires: 120
+                    Expires: 2 * 24 * 60 * 60 // XXX should be configurable
                 };
                 let url = this.s3.getSignedUrl('getObject', urlParams);
                 return resolve(url);

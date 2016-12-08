@@ -1,13 +1,21 @@
 # object-storage
 
-This is a tool to upload and keep objects in a safe place.
+This is a tool to upload and keep objects in a S3 storage.
 
 ## Usage examples
+
+It has been tested with Telefónica Cloud Storage, that is S3 compatible.
 
 ```javascript
 let storage = new ObjectStorage();
 storage.upload(stream).then(url => console.log('Resource available', url));
 ```
+
+Set the following env variables:
+- S3_ENDPOINT
+- S3_BUCKET
+- S3_ACCESS_KEY_ID
+- S3_SECRET_ACCESS_KEY
 
 ## LICENSE
 
