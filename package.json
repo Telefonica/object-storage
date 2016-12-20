@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.6.7",
+    "azure-storage": "^1.4.0",
     "logops": "^1.0.7",
     "node-uuid": "^1.4.7"
   },

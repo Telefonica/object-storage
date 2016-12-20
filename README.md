@@ -1,21 +1,34 @@
 # object-storage
 
-This is a tool to upload and keep objects in a S3 storage.
+This is a tool to upload and keep objects in an object storage provider.
+Currently supported providers are Azure Blob Storage and any AWS S3 compliant service.
 
 ## Usage examples
 
-It has been tested with Telefónica Cloud Storage, that is S3 compatible.
-
 ```javascript
-let storage = new ObjectStorage();
+const storage = require('@telefonica/object-storage');
+
+let provider = 'azure'; // "azure" or "s3"
+let storage = storage.ObjectStorageFactory.get(provider);
 storage.upload(stream).then(url => console.log('Resource available', url));
 ```
 
+### Azure Blob Storage
+
 Set the following env variables:
-- S3_ENDPOINT
+- AZURE_STORAGE_CONTAINER
+- AZURE_STORAGE_ACCOUNT
+- AZURE_STORAGE_ACCESS_KEY
+
+### S3
+
+Set the following env variables:
+- S3_ENDPOINT (optional, points to AWS S3 by default)
 - S3_BUCKET
 - S3_ACCESS_KEY_ID
 - S3_SECRET_ACCESS_KEY
+
+It has been tested with Telefónica Cloud Storage, that is S3 compatible.
 
 ## LICENSE
 

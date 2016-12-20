@@ -15,7 +15,19 @@
 * limitations under the License.
 */
 
-import  { Provider, ObjectStorageFactory } from './storage-factory';
+import { AzureObjectStorage, S3ObjectStorage, IStorage } from './storage';
 
-export { IStorage } from './storage';
-export { provider, ObjectStorageFactory } from './storage-factory';
+export type Provider = 's3'|'azure';
+
+export class ObjectStorageFactory {
+    static get(provider: Provider): IStorage {
+        // XXX this if/else smells bad from an architectural point of view
+        if (provider === 'azure') {
+            return new AzureObjectStorage();
+        } else if (provider === 's3') {
+            return new S3ObjectStorage();
+        } else {
+            throw new Error('Unsupported storage provider: ' + provider);
+        }
+    }
+}
