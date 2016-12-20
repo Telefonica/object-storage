@@ -44,5 +44,5 @@
   "engines": {
     "node": "~6.3.0"
   },
-  "typings": "./lib/storage.d.ts"
+  "typings": "./lib/index.d.ts"
 }
