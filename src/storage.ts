@@ -69,7 +69,7 @@ export class AzureObjectStorage implements IStorage {
                 let token = this.blob.generateSharedAccessSignature(container, blob, sharedAccessPolicy);
                 let url = this.blob.getUrl(container, blob, token);
                 return resolve(url);
-            })
+            });
 
             mystream.pipe(blobStream);
         });
