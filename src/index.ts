@@ -18,4 +18,4 @@
 import  { Provider, ObjectStorageFactory } from './storage-factory';
 
 export { IStorage } from './storage';
-export { provider, ObjectStorageFactory } from './storage-factory';
+export { Provider, ObjectStorageFactory } from './storage-factory';
